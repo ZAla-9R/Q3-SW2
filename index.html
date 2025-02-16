@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>JS Operators Demo</title>
+    </head>
+    <body>
+        <h1>JavaScript Operators Demo</h1>
+
+        <div class="card">
+            <h3>Input two numbers:</h3>
+            <form id="form">
+                <input type="number" class="numinput" id="num1" required>
+                <input type="number" class="numinput" id="num2" required>
+            </form>
+
+            <h3>Arithmetic Operators</h3>
+            <button onclick="showResult('+')">x + y</button>
+            <button onclick="showResult('-')">x - y</button>
+            <button onclick="showResult('*')">x * y</button>
+            <button onclick="showResult('/')">x / y</button>
+
+            <h3>Comparison Operators</h3>
+            <button onclick="showResult('>')">x > y</button>
+            <button onclick="showResult('<')">x < y</button>
+            <button onclick="showResult('<=')">x &#8804; y</button>
+            <button onclick="showResult('>=')">x &GreaterEqual; y</button>
+            <button onclick="showResult('==')">x == 'y'</button>
+            <button onclick="showResult('===')">x === 'y'</button>
+
+            <h3>Logical Operators</h3>
+            <button onclick="showResult('&&')">true && false</button>
+            <button onclick="showResult('||')">true || false</button>
+            <button onclick="showResult('!T')">!true</button>
+            <button onclick="showResult('!F')">!false</button>
+        </div>
+
+        <div id="output">Result:
+        </div>
+
+        <script>
+            function showResult(operator) {
+                var x = document.querySelectorAll(".numinput");
+                var i = document.getElementById("form");
+                var y = ['&&', '||', '!T', '!F'];
+                if (! i.checkValidity() && ! y.includes(operator)) {
+                    var temp = document.createElement("button");
+                    temp.type = "submit";
+                    i.appendChild(temp);
+                    temp.click();
+                    i.removeChild(temp);
+                } else {
+                    switch (operator) {
+                        case '+':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value + + x[1].value
+                                }`;
+                                break
+                            }
+                        case '-':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value - + x[1].value
+                                }`;
+                                break
+                            }
+                        case '*':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value * + x[1].value
+                                }`;
+                                break
+                            }
+                        case '/':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value / + x[1].value
+                                }`;
+                                break
+                            }
+                        case '>':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value > + x[1].value
+                                }`;
+                                break
+                            }
+                        case '<':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value < + x[1].value
+                                }`;
+                                break
+                            }
+                        case '<=':
+                            {
+                                document.getElementById('output').innerText = `Result: ${ + x[0].value<= + x[1].value
+                                }`;
+                                break
+                            }
+                            case '> = ':
+ {
+                                        document.getElementById('output').innerText = `Result: ${ + x[0].value >= + x[1].value
+                                        }`;
+                                        break
+                                    }
+                                    case '==' : {
+                                        document.getElementById('output').innerText = `Result: ${ + x[0].value == x[1].value.toString()
+                                        }`;
+                                        break
+                                    }
+                                    case '===' : {
+                                        document.getElementById('output').innerText = `Result: ${ + x[0].value === x[1].value.toString()
+                                        }`;
+                                        break
+                                    }
+                                    case '&&' : {
+                                        document.getElementById('output').innerText = `Result: ${
+                                            true && false
+                                        }`;
+                                        break
+                                    }
+                                    case '||' : {
+                                        document.getElementById('output').innerText = `Result: ${
+                                            true || false
+                                        }`;
+                                        break
+                                    }
+                                    case '!T' : {
+                                        document.getElementById('output').innerText = `Result: ${
+                                            !true
+                                        }`;
+                                        break
+                                    }
+                                    case '!F' : {
+                                        document.getElementById('output').innerText = `Result: ${
+                                            !false
+                                        }`;
+                                        break
+                                    }
+
+
+                                }
+                }
+            }
+                                </script>
+                            </body>
+                        </html>
